@@ -3,12 +3,12 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
-            "defaultValue": "[concat('exp-easyauth-labs-001-abc',uniqueString(resourceGroup().id) )]",
-            "type": "String"
+            "defaultValue": "[concat('easyauth', substring(uniqueString(resourceGroup().id),0,6))]",
+            "type": "string"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
-            "defaultValue": "[concat('exp-easyauth-labs-asp-001-abc',uniqueString(resourceGroup().id) )]",
-            "type": "String"
+            "defaultValue": "[concat('easyauth', substring(uniqueString(resourceGroup().id),0,6))]",
+            "type": "string"
         }
     },
     "variables": {},
