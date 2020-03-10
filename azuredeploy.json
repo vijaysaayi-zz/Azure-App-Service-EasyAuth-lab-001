@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
-            "defaultValue": "[parameters('sites_exp_easyauth_labs_001_name')]",
+            "defaultValue": "exp-easyauth-abc",
             "type": "string"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
