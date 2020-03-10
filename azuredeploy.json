@@ -166,7 +166,7 @@
             "name": "[concat(variables('wa_name'), '/authsettings')]",
             "location": "Central US",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', vairables('wa_name'))]"
+                "[resourceId('Microsoft.Web/sites', variables('wa_name'))]"
             ],
             "properties": {
                 "enabled": true,
