@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
-            "value": "easyauth-lab-wa"
+            "value": "easyauth-lab-001-wa"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
-            "value": "easyauth-lab-asp"
+            "value": "easyauth-lab-001-asp"
         }
     }
 }
