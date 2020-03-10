@@ -7,7 +7,7 @@
             "type": "String"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
-            "defaultValue": "exp-easyauth-labs-asp-abc",
+            "defaultValue": "[concat('exp-easyauth-labs-asp-001-abc',uniqueString(resourceGroup().id) )]",
             "type": "String"
         }
     },
