@@ -4,11 +4,9 @@
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
             "defaultValue": "[parameters('sites_exp_easyauth_labs_001_name')]",
-            "value":"[concat('az1eavxsiis', substring(uniqueString(resourceGroup().id),0,6))]",
             "type": "string"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
-            "value":"[parameters('serverfarms_exp_easyauth_labs_asp_name')]",
             "defaultValue": "exp-easyauth-asp",
             "type": "string"
         }
