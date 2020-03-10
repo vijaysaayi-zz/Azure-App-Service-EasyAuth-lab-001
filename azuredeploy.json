@@ -10,8 +10,8 @@
         }
     },
     "variables": {
-        "wa_name" : "[concat([parameters('sites_exp_easyauth_labs_001_name')], substring(uniqueString(resourceGroup().id),0,6))]",
-        "asp_name" : "[concat([parameters('serverfarms_exp_easyauth_labs_asp_name')], substring(uniqueString(resourceGroup().id),0,6))]"
+        "wa_name" : "[concat(parameters('sites_exp_easyauth_labs_001_name'), substring(uniqueString(resourceGroup().id),0,6))]",
+        "asp_name" : "[concat(parameters('serverfarms_exp_easyauth_labs_asp_name'), substring(uniqueString(resourceGroup().id),0,6))]"
     },
     "resources": [
         {
