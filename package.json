@@ -1,0 +1,13 @@
+{
+  "name": "k-valikoima-ad-hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^17.8.1"
+  }
+}
