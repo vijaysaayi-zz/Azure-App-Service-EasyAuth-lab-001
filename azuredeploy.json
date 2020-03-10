@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
-            "defaultValue": "exp-easyauth-labs-001",
+            "defaultValue": "exp-easyauth-labs-001-abc",
             "type": "String"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
-            "defaultValue": "exp-easyauth-labs-asp",
+            "defaultValue": "exp-easyauth-labs-asp-abc",
             "type": "String"
         }
     },
