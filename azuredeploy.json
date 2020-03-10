@@ -4,9 +4,11 @@
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
             "defaultValue": "exp-easyauth",
+            "value":"[parameters('sites_exp_easyauth_labs_001_name')]",
             "type": "string"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
+            "value":"[parameters('serverfarms_exp_easyauth_labs_asp_name')]",
             "defaultValue": "exp-easyauth-asp",
             "type": "string"
         }
