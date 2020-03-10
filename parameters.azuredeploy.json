@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
-            "value": "exp-easyauth-asdfghh"
+            "value": "[concat('az1eavxsiis', substring(uniqueString(resourceGroup().id),0,6))]",
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
-            "value": "exp-easyauth-asdfghh"
+            "value": "[concat('az1eavxsiis', substring(uniqueString(resourceGroup().id),0,6))]",
         }
     }
 }
