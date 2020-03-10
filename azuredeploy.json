@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_exp_easyauth_labs_001_name": {
-            "defaultValue": "concat('exp-easyauth-labs-001-abc',uniqueString(resourceGroup().id) )",
+            "defaultValue": "[concat('exp-easyauth-labs-001-abc',uniqueString(resourceGroup().id) )]",
             "type": "String"
         },
         "serverfarms_exp_easyauth_labs_asp_name": {
