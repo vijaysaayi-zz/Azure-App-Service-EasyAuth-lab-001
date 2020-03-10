@@ -9,12 +9,15 @@
             "type": "string"
         }
     },
-    "variables": {},
+    "variables": {
+        "wa_name" : "[concat([parameters('sites_exp_easyauth_labs_001_name')], substring(uniqueString(resourceGroup().id),0,6))]",
+        "asp_name" : "[concat([parameters('serverfarms_exp_easyauth_labs_asp_name')], substring(uniqueString(resourceGroup().id),0,6))]"
+    },
     "resources": [
         {
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2018-02-01",
-            "name": "[parameters('serverfarms_exp_easyauth_labs_asp_name')]",
+            "name": "[variables('asp_name')]",
             "location": "South India",
             "sku": {
                 "name": "B1",
@@ -28,7 +31,6 @@
                 "perSiteScaling": false,
                 "maximumElasticWorkerCount": 1,
                 "isSpot": false,
-                "freeOfferExpirationTime": "2020-04-09T14:44:57.6833333",
                 "reserved": true,
                 "isXenon": false,
                 "hyperV": false,
@@ -39,27 +41,27 @@
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2018-11-01",
-            "name": "[parameters('sites_exp_easyauth_labs_001_name')]",
+            "name": "[variables('wa_name')]",
             "location": "South India",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_exp_easyauth_labs_asp_name'))]"
+                "[resourceId('Microsoft.Web/serverfarms', variables('asp_name'))]"
             ],
             "kind": "app,linux,container",
             "properties": {
                 "enabled": true,
                 "hostNameSslStates": [
                     {
-                        "name": "[concat(parameters('sites_exp_easyauth_labs_001_name'), '.azurewebsites.net')]",
+                        "name": "[concat(variables('wa_name'), '.azurewebsites.net')]",
                         "sslState": "Disabled",
                         "hostType": "Standard"
                     },
                     {
-                        "name": "[concat(parameters('sites_exp_easyauth_labs_001_name'), '.scm.azurewebsites.net')]",
+                        "name": "[concat(variables('wa_name'), '.scm.azurewebsites.net')]",
                         "sslState": "Disabled",
                         "hostType": "Repository"
                     }
                 ],
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_exp_easyauth_labs_asp_name'))]",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('asp_name'))]",
                 "reserved": true,
                 "isXenon": false,
                 "hyperV": false,
@@ -76,10 +78,10 @@
         {
             "type": "Microsoft.Web/sites/config",
             "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_exp_easyauth_labs_001_name'), '/web')]",
+            "name": "[concat(variables('wa_name'), '/web')]",
             "location": "South India",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_exp_easyauth_labs_001_name'))]"
+                "[resourceId('Microsoft.Web/sites', variables('wa_name'))]"
             ],
             "properties": {
                 "numberOfWorkers": 1,
@@ -148,15 +150,52 @@
         {
             "type": "Microsoft.Web/sites/hostNameBindings",
             "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_exp_easyauth_labs_001_name'), '/', parameters('sites_exp_easyauth_labs_001_name'), '.azurewebsites.net')]",
+            "name": "[concat(variables('wa_name'), '/', variables('wa_name'), '.azurewebsites.net')]",
             "location": "South India",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_exp_easyauth_labs_001_name'))]"
+                "[resourceId('Microsoft.Web/sites', variables('wa_name'))]"
             ],
             "properties": {
                 "siteName": "exp-easyauth-labs-001",
                 "hostNameType": "Verified"
             }
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2016-08-01",
+            "name": "[concat(variables('wa_name'), '/authsettings')]",
+            "location": "Central US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', vairables('wa_name'))]"
+            ],
+            "properties": {
+                "enabled": true,
+                "unauthenticatedClientAction": "RedirectToLoginPage",
+                "tokenStoreEnabled": true,
+                "defaultProvider": "AzureActiveDirectory",
+                "clientId": "6ca1e2ce-3406-42c9-9026-f09a3e1ed506",
+                "clientSecret": "gkRUzpGEbeX2bxpaf8RynrcrOe=@48?-",
+                "clientSecretCertificateThumbprint": null,
+                "issuer": "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/",
+                "allowedAudiences": [
+					"[concat('https://',variables('wa_name'), '.azurewebsites.net')]",
+                ],
+                "additionalLoginParams": null,
+                "isAadAutoProvisioned": false,
+                "googleClientId": null,
+                "googleClientSecret": null,
+                "googleOAuthScopes": null,
+                "facebookAppId": null,
+                "facebookAppSecret": null,
+                "facebookOAuthScopes": null,
+                "twitterConsumerKey": null,
+                "twitterConsumerSecret": null,
+                "microsoftAccountClientId": null,
+                "microsoftAccountClientSecret": null,
+                "microsoftAccountOAuthScopes": null
+            }
         }
+
+        
     ]
 }
