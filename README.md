@@ -1,4 +1,4 @@
-# Azure-App-Service-EasyAuth-lab-001
+# Azure App Service EasyAuth Lab 1
 
 This is a Level 200 lab for Azure App Service built-in authentication aka Azure EasyAuth  
 
