@@ -3,11 +3,11 @@
 This is a Level 200 lab for Azure App Service built-in authentication aka Azure EasyAuth  
 
 ## Senario:
-In this lab, you will need to find out the cause for the HTTP 400 error on the web page. 
+In this lab, you will need to find out the cause for the HTTP 400 error, only when Easyauth is enabled for the App Service. 
 When it is working, you see the message "Hello World" on the web page.
 
 ## Goal:
-Your goal is to find the root cause for the HTTP 400 error, fix the problem on the web app.
+Your goal is to find the root cause for the HTTP 400 error, fix the problem on App Service.
 
 ## Deployment Instructions :
 1.	Click on the “Deploy to Azure” button. 
