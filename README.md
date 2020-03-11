@@ -1,17 +1,15 @@
 # Azure-App-Service-EasyAuth-lab-001
 
-## Introduction :
 This is a Level 200 lab for Azure App Service built-in authentication aka Azure EasyAuth  
 
 ## Deployment Instructions :
-1.	Click on the “Deploy to Azure” button. This will open a new browser window and navigate to the Azure Deployment Page. <br>
-2.	Choose your subscription and click on "Next" button. <br>
-3.	Click on "Deploy". <br>
-
-## Deployment Link :
-<a href="https://deploy.azure.com?repository=https://github.com/vijaysaayi/Azure-App-Service-EasyAuth-lab-001?ptmpl=https://rawcdn.githack.com/vijaysaayi/Azure-App-Service-EasyAuth-lab-001/b23eb336e1a3acac04c7e3b8c2b7a6ca58c94a7d/parameters.azuredeploy.json" target="_blank">
+1.	Click on the “Deploy to Azure” button. <br/>
+    <a href="https://deploy.azure.com?repository=https://github.com/vijaysaayi/Azure-App-Service-EasyAuth-lab-001?ptmpl=https://rawcdn.githack.com/vijaysaayi/Azure-App-Service-EasyAuth-lab-001/b23eb336e1a3acac04c7e3b8c2b7a6ca58c94a7d/parameters.azuredeploy.json" target="_blank">
     <img src="https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/deploybutton.png"/>
 </a>
+    This will open a new browser window and navigate to the Azure Deployment Page. 
+2.	Choose your subscription and click on "Next" button. <br>
+3.	Click on "Deploy". <br>
 
 ## Resources Created : 
 - Resource  Group  : Azure-App-Service-EasyAuth-lab-xxxxxxx
